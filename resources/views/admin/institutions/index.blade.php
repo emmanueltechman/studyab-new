@@ -29,8 +29,12 @@
                             {{ trans('cruds.institution.fields.name') }}
                         </th>
                         <th>
+                             <h4>Country</h4>
+                        </th>
+                        <th>
                             {{ trans('cruds.institution.fields.description') }}
                         </th>
+
                         <th>
                             {{ trans('cruds.institution.fields.logo') }}
                         </th>
@@ -52,8 +56,12 @@
                                 {{ $institution->name ?? '' }}
                             </td>
                             <td>
+                                {{ $institution->country->name ?? '' }}
+                            </td>
+                            <td>
                                 {{ $institution->description ?? '' }}
                             </td>
+
                             <td>
                                 @if($institution->logo)
                                     <a href="{{ $institution->logo->getUrl() }}" target="_blank">

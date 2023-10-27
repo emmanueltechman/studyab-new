@@ -17,19 +17,19 @@ class CoursesTableSeeder extends Seeder
         $faker = Faker\Factory::create();
         $courses = [
             [
-                'name' => 'Web Development',
+                'name' => 'Human Anatomy',
                 'description' => $faker->paragraph,
                 'institution_id' => 1,
                 'price' => 130
             ],
             [
-                'name' => 'Web UX/UI Design',
+                'name' => 'Software Development',
                 'description' => $faker->paragraph,
                 'institution_id' => 2,
                 'price' => null
             ],
             [
-                'name' => 'Wordpress Development',
+                'name' => 'International Business Management',
                 'description' => $faker->paragraph,
                 'institution_id' => 3,
                 'price' => 160

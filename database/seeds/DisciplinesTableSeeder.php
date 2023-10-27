@@ -12,7 +12,7 @@ class DisciplinesTableSeeder extends Seeder
      */
     public function run()
     {
-        $disciplines = ['Web Development', 'Design', 'Wordpress'];
+        $disciplines = ['Science', 'Social Science', 'Art'];
 
         foreach($disciplines as $discipline)
             Discipline::create(['name' => $discipline]);

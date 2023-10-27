@@ -21,6 +21,28 @@
                     {{ trans('cruds.institution.fields.name_helper') }}
                 </p>
             </div>
+            <div class="form-group">
+                <label for="country">Country*</label>
+                <select name="country" id="country" class="form-control">
+                    <option data-dsplay="By Country">Select Country</option>
+                    @foreach ($countries as $country)
+
+                    <option value="{{ old('country_id', isset($institution) ? $institution->country_id : '') }}">{{$country->name}}</option>
+
+                    @endforeach
+                </select>
+
+
+                <!-- <input type="text" id="name" name="name" class="form-control" value="{{ old('name', isset($institution) ? $institution->name : '') }}" required> -->
+                <!-- @if($errors->has('name'))
+                    <em class="invalid-feedback">
+                        {{ $errors->first('name') }}
+                    </em>
+                @endif
+                <p class="helper-block">
+                    {{ trans('cruds.institution.fields.name_helper') }}
+                </p> -->
+            </div>
             <div class="form-group {{ $errors->has('description') ? 'has-error' : '' }}">
                 <label for="description">{{ trans('cruds.institution.fields.description') }}</label>
                 <textarea id="description" name="description" class="form-control ">{{ old('description', isset($institution) ? $institution->description : '') }}</textarea>

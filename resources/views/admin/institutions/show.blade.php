@@ -28,6 +28,14 @@
                     </tr>
                     <tr>
                         <th>
+                            <h4>Country</h4>
+                        </th>
+                        <td>
+                            {{ $institution->country->name }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
                             {{ trans('cruds.institution.fields.description') }}
                         </th>
                         <td>

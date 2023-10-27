@@ -30,8 +30,16 @@
                                             <p>Institution</p>
                                             <h5><a href="{{ route('courses.index') }}?institution={{ $course->institution->id }}">{{ $course->institution->name }}</a></h5>
                                         </div>
+                                        <div class="author_rating">
+                                            <div class="rating">
+                                                <a href="#" class="btn_4 mr-1 mb-1">{{ $course->institution->country->code }}</a>
+                                            </div>
+
                                     </div>
+                                    </div>
+
                                 </div>
+
                             @endif
                         </div>
                     </div>

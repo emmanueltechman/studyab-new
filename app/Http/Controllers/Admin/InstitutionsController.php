@@ -8,6 +8,7 @@ use App\Http\Requests\MassDestroyInstitutionRequest;
 use App\Http\Requests\StoreInstitutionRequest;
 use App\Http\Requests\UpdateInstitutionRequest;
 use App\Institution;
+use App\Models\Country;
 use Gate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -27,9 +28,10 @@ class InstitutionsController extends Controller
 
     public function create()
     {
+        $countries = Country::all();
         abort_if(Gate::denies('institution_create'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return view('admin.institutions.create');
+        return view('admin.institutions.create', compact('countries'));
     }
 
     public function store(StoreInstitutionRequest $request)

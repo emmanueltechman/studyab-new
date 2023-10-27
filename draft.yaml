@@ -1,0 +1,107 @@
+models:
+
+  Country:
+    name: string
+    code: string
+    currency: string
+    relationships:
+      hasMany: Institution
+
+  Level:
+    name: string
+    code: string
+    relationships:
+      hasMany: ModeOfStudy
+      belongsTo: Course
+
+  ModeOfStudy:
+    name: string
+    duration: string
+    relationships:
+      hasMany: Term
+
+  Term:
+    name: string
+    period: string
+    relationships:
+      hasMany: Fee, ApplicationWindow
+
+  Fee:
+    application_fee: decimal:10,2
+    living_expenses: decimal:10,2
+    local_tuition: decimal:10,2
+    int_tuition: decimal:10,2
+
+
+  ApplicationWindow:
+    openingDate: datetime
+    closingDate: datetime
+
+
+
+
+
+
+controllers:
+
+  Country:
+    index:
+      query: all
+      render: country.index with:countries
+    show:
+      render: country.show with:country
+
+  Fee:
+    resource: index, show, create, update, edit, destroy
+    store:
+      validate: name, amount
+      save: fee
+      dispatch: SyncMedia with:fee
+      fire: Newfee with:fee
+      flash: fee.message
+      redirect: fee.index
+
+  Level:
+    resource: index, show, create, update, edit, destroy
+    store:
+      validate: name, code, lenght
+      save: level
+      dispatch: SyncMedia with:level
+      fire: NewLevel with:level
+      flash: level.message
+      redirect: level.index
+
+  Term:
+    resource: index, show, create, update, edit, destroy
+    store:
+      validate: name, application_Window_id, period
+      save: term
+      dispatch: SyncMedia with:term
+      fire: NewSession with:term
+      flash: term.message
+      redirect: term.index
+
+  ApplicationWindow:
+    resource: index, show, create, update, edit, destroy
+    store:
+      validate: opening_date, closing_date
+      save: application_window
+      dispatch: SyncMedia with:application_window
+      fire: NewApplicationWindow with:application_window
+      flash: application_window.message
+      redirect: application_window.index
+
+
+  ModeOfStudy:
+    resource: index, show, create, update, edit, destroy
+    store:
+      validate: name, description
+      save: mode_of_study
+      dispatch: SyncMedia with:mode_of_study
+      fire: NewModeOfStudy with:mode_of_study
+      flash: mode_of_study.message
+      redirect: mode_of_study.index
+
+seeders: Country, Fee, Level, Term, ApplicationWindow, ModeOfStudy
+
+

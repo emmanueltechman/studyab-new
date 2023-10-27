@@ -3,7 +3,7 @@
         <div class="row justify-content-between">
             <div class="col-sm-6 col-md-4 col-xl-3">
                 <div class="single-footer-widget footer_1">
-                    <a href="index.html"> <img src="{{ asset('img/logo.png') }}" alt=""> </a>
+                    <a href="index.html"> <img src="{{ asset('img/logo-2.png') }}" alt=""> </a>
                     <p>But when shot real her. Chamber her one visite removal six
                         sending himself boys scot exquisite existend an </p>
                     <p>But when shot real her hamber her </p>
@@ -54,7 +54,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Study Abroad <i class="ti-heart" aria-hidden="true"></i> by <a href="#" target="_blank">CGHIS</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                         </div>
                     </div>

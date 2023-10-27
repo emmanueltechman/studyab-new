@@ -49,3 +49,16 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::delete('enrollments/destroy', 'EnrollmentsController@massDestroy')->name('enrollments.massDestroy');
     Route::resource('enrollments', 'EnrollmentsController');
 });
+
+
+Route::resource('country', App\Http\Controllers\CountryController::class)->only('index', 'show');
+
+Route::resource('fee', App\Http\Controllers\FeeController::class);
+
+Route::resource('level', App\Http\Controllers\LevelController::class);
+
+Route::resource('term', App\Http\Controllers\TermController::class);
+
+Route::resource('application-window', App\Http\Controllers\ApplicationWindowController::class);
+
+Route::resource('mode-of-study', App\Http\Controllers\ModeOfStudyController::class);

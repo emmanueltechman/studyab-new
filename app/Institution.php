@@ -30,6 +30,7 @@ class Institution extends Model implements HasMedia
         'updated_at',
         'deleted_at',
         'description',
+        'country_id',
     ];
 
     public function registerMediaConversions(Media $media = null): void
@@ -45,6 +46,11 @@ class Institution extends Model implements HasMedia
     public function courses()
     {
         return $this->hasMany(Course::class, 'institution_id', 'id');
+    }
+
+    public function country()
+    {
+        return $this->belongsTo(Country::class);
     }
 
     public function getLogoAttribute()
