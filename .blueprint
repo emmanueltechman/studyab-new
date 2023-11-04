@@ -1,0 +1,84 @@
+created:
+    - app/Http/Controllers/CountryController.php
+    - app/Http/Controllers/FeeController.php
+    - app/Http/Controllers/LevelController.php
+    - app/Http/Controllers/TermController.php
+    - app/Http/Controllers/ApplicationWindowController.php
+    - app/Http/Controllers/ModeOfStudyController.php
+    - database/factories/CountryFactory.php
+    - database/factories/LevelFactory.php
+    - database/factories/ModeOfStudyFactory.php
+    - database/factories/TermFactory.php
+    - database/factories/FeeFactory.php
+    - database/factories/ApplicationWindowFactory.php
+    - database/migrations/2023_10_22_061234_create_countries_table.php
+    - database/migrations/2023_10_22_061235_create_levels_table.php
+    - database/migrations/2023_10_22_061236_create_mode_of_studies_table.php
+    - database/migrations/2023_10_22_061237_create_terms_table.php
+    - database/migrations/2023_10_22_061238_create_fees_table.php
+    - database/migrations/2023_10_22_061239_create_application_windows_table.php
+    - app/Models/Country.php
+    - app/Models/Level.php
+    - app/Models/ModeOfStudy.php
+    - app/Models/Term.php
+    - app/Models/Fee.php
+    - app/Models/ApplicationWindow.php
+    - database/seeders/CountrySeeder.php
+    - database/seeders/FeeSeeder.php
+    - database/seeders/LevelSeeder.php
+    - database/seeders/TermSeeder.php
+    - database/seeders/ApplicationWindowSeeder.php
+    - database/seeders/ModeOfStudySeeder.php
+    - tests/Feature/Http/Controllers/CountryControllerTest.php
+    - tests/Feature/Http/Controllers/FeeControllerTest.php
+    - tests/Feature/Http/Controllers/LevelControllerTest.php
+    - tests/Feature/Http/Controllers/TermControllerTest.php
+    - tests/Feature/Http/Controllers/ApplicationWindowControllerTest.php
+    - tests/Feature/Http/Controllers/ModeOfStudyControllerTest.php
+    - app/Events/Newfee.php
+    - app/Events/NewLevel.php
+    - app/Events/NewSession.php
+    - app/Events/NewApplicationWindow.php
+    - app/Events/NewModeOfStudy.php
+    - app/Http/Requests/FeeUpdateRequest.php
+    - app/Http/Requests/FeeStoreRequest.php
+    - app/Http/Requests/LevelUpdateRequest.php
+    - app/Http/Requests/LevelStoreRequest.php
+    - app/Http/Requests/TermUpdateRequest.php
+    - app/Http/Requests/TermStoreRequest.php
+    - app/Http/Requests/ApplicationWindowUpdateRequest.php
+    - app/Http/Requests/ApplicationWindowStoreRequest.php
+    - app/Http/Requests/ModeOfStudyUpdateRequest.php
+    - app/Http/Requests/ModeOfStudyStoreRequest.php
+    - app/Jobs/SyncMedia.php
+    - resources/views/country/index.blade.php
+    - resources/views/country/show.blade.php
+    - resources/views/fee/index.blade.php
+    - resources/views/fee/create.blade.php
+    - resources/views/fee/show.blade.php
+    - resources/views/fee/edit.blade.php
+    - resources/views/level/index.blade.php
+    - resources/views/level/create.blade.php
+    - resources/views/level/show.blade.php
+    - resources/views/level/edit.blade.php
+    - resources/views/term/index.blade.php
+    - resources/views/term/create.blade.php
+    - resources/views/term/show.blade.php
+    - resources/views/term/edit.blade.php
+    - resources/views/applicationWindow/index.blade.php
+    - resources/views/applicationWindow/create.blade.php
+    - resources/views/applicationWindow/show.blade.php
+    - resources/views/applicationWindow/edit.blade.php
+    - resources/views/modeOfStudy/index.blade.php
+    - resources/views/modeOfStudy/create.blade.php
+    - resources/views/modeOfStudy/show.blade.php
+    - resources/views/modeOfStudy/edit.blade.php
+updated:
+    - routes/web.php
+models:
+    Country: { name: string, code: string, currency: string, relationships: { hasMany: Institution } }
+    Level: { name: string, code: string, relationships: { hasMany: ModeOfStudy, belongsTo: Course } }
+    ModeOfStudy: { name: string, duration: string, relationships: { hasMany: Term } }
+    Term: { name: string, period: string, relationships: { hasMany: 'Fee, ApplicationWindow' } }
+    Fee: { application_fee: 'decimal:10,2', living_expenses: 'decimal:10,2', local_tuition: 'decimal:10,2', int_tuition: 'decimal:10,2' }
+    ApplicationWindow: { openingDate: datetime, closingDate: datetime }
