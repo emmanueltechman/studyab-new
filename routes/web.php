@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CountryController;
+
 Route::get('/home', function () {
     if (session('status')) {
         return redirect()->route('admin.home')->with('status', session('status'));
@@ -8,9 +10,15 @@ Route::get('/home', function () {
     return redirect()->route('admin.home');
 });
 
+// Route::get('/home2', function () {
+//     return view('front-pages.home');
+
+// });
+
 Auth::routes(['register' => false]);
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/home2', 'HomeController@index')->name('home');
+// Route::get('/', 'HomeController@index')->name('home');
 Route::get('enroll/login/{course}', 'EnrollmentController@handleLogin')->name('enroll.handleLogin')->middleware('auth');
 Route::get('enroll/{course}', 'EnrollmentController@create')->name('enroll.create');
 Route::post('enroll/{course}', 'EnrollmentController@store')->name('enroll.store');
@@ -51,7 +59,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 });
 
 
-Route::resource('country', App\Http\Controllers\CountryController::class)->only('index', 'show');
+Route::resource('country', CountryController::class)->only('index', 'show');
 
 Route::resource('fee', App\Http\Controllers\FeeController::class);
 
