@@ -32,18 +32,10 @@
         <link rel="stylesheet" href="{{config('app.url')}}/front-assets/css/style.css">
     </head>
     <body>
-        {{-- <!--====== Start Preloader ======-->
-        <div class="preloader">
-            <div class="loader">
-                <img src="{{config('app.url')}}/front-assets/images/loader.png" alt="loader">
-            </div>
-        </div>
-        <!--====== End Preloader ======--> --}}
+
+
 
         @include('template.front.header')
-
-
-
 
         @yield('content')
 

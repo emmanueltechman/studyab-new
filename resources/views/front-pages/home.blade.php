@@ -1,7 +1,7 @@
 @extends('template.front.main')
 
 @section('content')
-@include('template.front.hero-search')
+    @include('template.front.hero-search')
 
     <!--====== End Hero Section ======-->
     <!--====== Start category Section ======-->
@@ -131,59 +131,7 @@
 
 
     <!--====== Start Features Section ======-->
-    {{-- <section class="features-area">
-        <div class="features-wrapper-two bg_cover pt-115 pb-80" style="background-image: url({{config('app.url')}}/front-assets/images/bg/features-bg-1.jpg);">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-6">
-                        <div class="section-title section-title-white text-center mb-50">
-                            <span class="sub-title">Working Process</span>
-                            <h2>How Does We Works</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-12">
-                        <div class="features-item features-item-one mb-40">
-                            <div class="icon">
-                                <i class="flaticon-map"></i>
-                            </div>
-                            <div class="content">
-                                <h4>Find Your Places</h4>
-                                <p>Amet consectetur adipiscing elitsed
-                                    do eiusmod tempor incididunt ut labore et dolore magna aliqua suspe</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12">
-                        <div class="features-item features-item-one mb-40">
-                            <div class="icon">
-                                <i class="flaticon-star"></i>
-                            </div>
-                            <div class="content">
-                                <h4>Customer Reviews</h4>
-                                <p>Amet consectetur adipiscing elitsed
-                                    do eiusmod tempor incididunt ut labore et dolore magna aliqua suspe</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12">
-                        <div class="features-item features-item-one mb-40">
-                            <div class="icon">
-                                <i class="flaticon-calendar"></i>
-                            </div>
-                            <div class="content">
-                                <h4>Find Your Places</h4>
-                                <p>Amet consectetur adipiscing elitsed
-                                    do eiusmod tempor incididunt ut labore et dolore magna aliqua suspe</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
-    <!--====== End Features Section ======-->
+
 
     <!--====== Start Testimonial Section ======-->
     <section class="testimonial-area pt-120 pb-120">
@@ -295,7 +243,7 @@
                                 <h2>Become an Agent</h2>
                             </div>
                             <p>Access programs and courses from top university and give your students the competitive edge. </p>
-                            <a href="#" class="main-btn icon-btn">Create Account</a>
+                            <a href="/login" class="main-btn icon-btn">Create Account</a>
                         </div>
                     </div>
                     <div class="col-lg-7">

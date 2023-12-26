@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Course;
 use App\Institution;
+use App\Country;
 use Illuminate\Http\Request;
 
 
@@ -29,7 +30,8 @@ class HomeController extends Controller
 
         $newestCourses = Course::orderBy('id', 'desc')->take(3)->get();
         $randomInstitutions = Institution::inRandomOrder()->take(3)->get();
+        $countries = Country::all();
 
-        return view('front-pages.home', compact(['newestCourses', 'randomInstitutions']));
+        return view('front-pages.home', compact(['newestCourses', 'randomInstitutions', 'countries']));
     }
 }
