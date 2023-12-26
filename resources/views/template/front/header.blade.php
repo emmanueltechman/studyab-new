@@ -14,7 +14,7 @@
                             <div class="navbar-close"><i class="ti-close"></i></div>
                             <nav class="main-menu">
                                 <ul>
-                                    <li class="menu-item"><a href="/home2">Home</a></li>
+                                    <li class="menu-item"><a href="/">Home</a></li>
                                     <li class="menu-item"><a href="/courses">Courses</a></li>
                                     <li class="menu-item"><a href="/login">Agents & Partners</a></li>
 

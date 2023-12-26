@@ -32,6 +32,6 @@ class HomeController extends Controller
         $randomInstitutions = Institution::inRandomOrder()->take(3)->get();
         $countries = Country::all();
 
-        return view('front-pages.home', compact(['newestCourses', 'randomInstitutions', 'countries']));
+        return view('home', compact(['newestCourses', 'randomInstitutions', 'countries']));
     }
 }

@@ -17,8 +17,7 @@ Route::get('/home', function () {
 
 Auth::routes(['register' => false]);
 
-Route::get('/home2', 'HomeController@index')->name('home');
-// Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 Route::get('enroll/login/{course}', 'EnrollmentController@handleLogin')->name('enroll.handleLogin')->middleware('auth');
 Route::get('enroll/{course}', 'EnrollmentController@create')->name('enroll.create');
 Route::post('enroll/{course}', 'EnrollmentController@store')->name('enroll.store');
