@@ -6,7 +6,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-2 col-5">
                         <div class="site-branding">
-                            <a href="/home2" class="brand-logo"><img src="{{config('app.url')}}/front-assets/images/logo-3.png" alt="Brand Logo"></a>
+                            <a href="/" class="brand-logo"><img src="{{config('app.url')}}/front-assets/images/logo-3.png" alt="Brand Logo"></a>
                         </div>
                     </div>
                     <div class="col-lg-7 col-2">
